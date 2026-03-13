@@ -19,10 +19,10 @@ export default function Footer() {
             Let's Connect
           </h2>
 
-          <p className="text-white/60 max-w-md leading-relaxed">
+          {/* <p className="text-white/60 max-w-md leading-relaxed">
             I'm always open to discussing design, collaboration,
             or new opportunities. Feel free to reach out.
-          </p>
+          </p> */}
         </motion.div>
 
         {/* Contact Buttons */}
