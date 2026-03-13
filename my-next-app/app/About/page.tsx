@@ -197,9 +197,7 @@ export default function AboutPage() {
               }}
             >
               <div className="flex items-center gap-3 mb-6">
-                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-light-purple/20 text-xl">
-                  ✨
-                </div>
+                
                 <h2 className="text-3xl font-bold text-yellow">Personal Story</h2>
               </div>
 
@@ -231,9 +229,7 @@ export default function AboutPage() {
               }}
             >
               <div className="flex items-center gap-3 mb-6">
-                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-pink/20 text-xl">
-                  🎓
-                </div>
+              
                 <h2 className="text-3xl font-bold text-light-purple">Education</h2>
               </div>
 
@@ -275,9 +271,7 @@ export default function AboutPage() {
             }}
           >
             <div className="flex items-center gap-3 mb-8">
-              <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-light-purple/20 text-xl">
-                💼
-              </div>
+              
               <h2 className="text-3xl font-bold text-pink">Internships & Experience</h2>
             </div>
 
