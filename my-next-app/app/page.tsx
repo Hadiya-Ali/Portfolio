@@ -285,47 +285,18 @@ export default function Home() {
               </motion.div>
 
               <motion.div
-                initial={{ opacity: 0, y: 14 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.35 }}
-                transition={{ duration: 0.65, delay: 0.05, ease: [0.16, 1, 0.3, 1] }}
-              >
-                <p className="text-lg md:text-xl leading-relaxed">
-                  Hi! I’m{" "}
-                  <span className="text-light-purple font-semibold">Hadia Ali</span>. I am a Software Engineering student at NUST and a passionate UI/UX designer who loves turning ideas into meaningful digital experiences. Creativity drives everything I do, and I enjoy exploring new design concepts, experimenting with layouts, and crafting interfaces that are both visually appealing and easy to use.
-                </p>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 14 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.35 }}
-                transition={{ duration: 0.65, delay: 0.12, ease: [0.16, 1, 0.3, 1] }}
-              >
-                <p className="text-lg md:text-xl leading-relaxed">
-                  A key part of my design process is understanding users. Their needs, behaviors, and challenges. I believe that good design starts with empathy, and by focusing on the user’s perspective, I aim to create solutions that are intuitive, accessible, and meaningful.
-                </p>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 14 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.35 }}
-                transition={{ duration: 0.65, delay: 0.18, ease: [0.16, 1, 0.3, 1] }}
-              >
-                <p className="text-lg md:text-xl leading-relaxed">
-                  For me, design is more than just aesthetics; it is about solving real problems and creating seamless interactions that make technology feel natural and enjoyable. As a software engineering student, I am continuously learning how design and technology work together to build better digital products.
-                </p>
-              </motion.div>
-              <motion.div
-                initial={{ opacity: 0, y: 14 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.35 }}
-                transition={{ duration: 0.65, delay: 0.05, ease: [0.16, 1, 0.3, 1] }}
-              >
-                <p className="text-lg md:text-xl leading-relaxed">
-                  I am always eager to improve my skills, explore new tools, and push my creativity to develop designs that are innovative, functional, and engaging.</p>
-              </motion.div>
+  initial={{ opacity: 0, y: 14 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true, amount: 0.35 }}
+  transition={{ duration: 0.65, delay: 0.05, ease: [0.16, 1, 0.3, 1] }}
+>
+  <p className="text-lg md:text-xl leading-relaxed">
+    Hi! I’m <span className="text-light-purple font-semibold">Hadia Ali</span>, a Software Engineering student at NUST and a passionate UI/UX designer. 
+    I enjoy turning ideas into meaningful digital experiences through thoughtful and user-focused design. 
+    My process centers around understanding users and creating interfaces that are intuitive, accessible, and visually engaging. 
+    I’m always exploring new tools, learning new techniques, and pushing my creativity to design experiences that are both functional and impactful.
+  </p>
+</motion.div>
             </div>
           </motion.div>
         </section>

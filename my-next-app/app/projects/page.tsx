@@ -46,7 +46,16 @@ function FloatingScreen({
     </motion.div>
   );
 }
-
+type Project = {
+  title: string;
+  desc?: string;
+  tags?: string[];
+  designTools?: string[];
+  figmaLink?: string;
+  midFigmaLink?: string;
+  highFigmaLink?: string;
+  githubLink?: string;
+};
 const PROJECTS = [
   {
     title: "CyberShield",
@@ -72,7 +81,7 @@ const PROJECTS = [
     designTools: ["Figma"],
     figmaLink:
       "https://www.figma.com/design/szFXsQvPQSxjLSvBb8s4Y2/CyberShield",
-    
+    githubLink: "https://github.com/AimenMunawarDeveloper/Cybershield-Frontend",
   },
   {
     title: "CyberShield (Urdu Figma)",
@@ -98,6 +107,7 @@ const PROJECTS = [
     designTools: ["Figma"],
     figmaLink:
       "https://www.figma.com/design/Z1pCtMuDx3tucttlemwpnO/CyberShield-in-urdu",
+      githubLink: "https://github.com/AimenMunawarDeveloper/Cybershield-Frontend",
     
   },
   {
@@ -116,7 +126,12 @@ const PROJECTS = [
       
     ],
     designTools: ["Figma"],
-    figmaLink: "https://www.figma.com/file/xxxx",
+   midFigmaLink:
+      "https://www.figma.com/design/kK49fPeX1kf0wRNhsTfmzH/Project-X---Mid-Fidelity-Design?node-id=0-1&p=f&t=cVYBwpwPoDS3V7yg-0",
+
+    highFigmaLink:
+      "https://www.figma.com/design/XHxAIQuezauePKDqA5Ccvw/ProjectX--HighFidelity?node-id=0-1&t=QraSrUIE4zoglOKL-0",
+
     githubLink:
       "https://github.com/AimenMunawarDeveloper/Project-X/tree/new-changes",
   },
@@ -294,31 +309,56 @@ export default function ProjectsPage() {
 
                 <div className="my-6 h-px w-full bg-white/10" />
 
-                {(p.figmaLink || p.githubLink) && (
-                  <div className="flex items-center gap-3">
-                    {p.figmaLink && (
-                      <a
-                        href={p.figmaLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="rounded-xl border border-white/10 bg-light-purple/20 px-4 py-2 text-sm text-white transition hover:bg-light-purple"
-                      >
-                        Figma
-                      </a>
-                    )}
+                
+                 {(p.figmaLink || p.midFigmaLink || p.highFigmaLink || p.githubLink) && (
+  <div className="flex flex-wrap items-center gap-3">
 
-                    {p.githubLink && (
-                      <a
-                        href={p.githubLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="rounded-xl border border-white/10 px-4 py-2 text-sm text-white/80 transition hover:bg-pink hover:text-white"
-                      >
-                        GitHub
-                      </a>
-                    )}
-                  </div>
-                )}
+    {p.figmaLink && (
+      <a
+        href={p.figmaLink}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="rounded-xl border border-white/10 bg-light-purple/20 px-4 py-2 text-sm text-white transition hover:bg-light-purple"
+      >
+        Figma
+      </a>
+    )}
+
+    {p.midFigmaLink && (
+      <a
+        href={p.midFigmaLink}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="rounded-xl border border-white/10 bg-light-purple/20 px-4 py-2 text-sm text-white transition hover:bg-light-purple"
+      >
+        Mid-Fidelity
+      </a>
+    )}
+
+    {p.highFigmaLink && (
+      <a
+        href={p.highFigmaLink}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="rounded-xl border border-white/10 bg-pink/20 px-4 py-2 text-sm text-white transition hover:bg-pink"
+      >
+        High-Fidelity
+      </a>
+    )}
+
+    {p.githubLink && (
+      <a
+        href={p.githubLink}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="rounded-xl border border-white/10 px-4 py-2 text-sm text-white/80 transition hover:bg-pink hover:text-white"
+      >
+        GitHub
+      </a>
+    )}
+
+  </div>
+)}
               </div>
             </motion.div>
           ))}
