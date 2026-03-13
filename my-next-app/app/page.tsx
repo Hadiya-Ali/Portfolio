@@ -301,81 +301,81 @@ export default function Home() {
           </motion.div>
         </section>
         <section className="bg-deep-purple py-20 px-6">
-          <div className="max-w-6xl mx-auto">
+  <div className="max-w-6xl mx-auto">
 
-            {/* Section Heading */}
-            <motion.div
-              initial={{ opacity: 0, y: 20, filter: "blur(6px)" }}
-              whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-              viewport={{ once: true, amount: 0.4 }}
-              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-              className="text-center mb-16"
-            >
-              <h2 className="text-4xl md:text-5xl font-bold text-light-purple">
-                Tools I’ve Worked With
-              </h2>
-            </motion.div>
+    {/* Section Heading */}
+    <motion.div
+      initial={{ opacity: 0, y: 20, filter: "blur(6px)" }}
+      whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+      viewport={{ once: true, amount: 0.4 }}
+      transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+      className="text-center mb-16"
+    >
+      <h2 className="text-4xl md:text-5xl font-bold text-light-purple">
+        Tools I’ve Worked With
+      </h2>
+    </motion.div>
 
-            {/* Tools Grid */}
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-14 items-center justify-items-center">
-              {[
-                { src: "/figma.svg", name: "Figma", direction: -120 },
-                { src: "/autocad.jpg", name: "AutoCAD", direction: 120 },
-                { src: "/Google_Docs.png", name: "Google Docs", direction: -120 },
-                { src: "/iartbook.png", name: "IArtbook", direction: 120 },
-                { src: "/html.png", name: "HTML", direction: -120 },
-                { src: "/css.png", name: "CSS", direction: 120 },
-                { src: "/React-Logo.png", name: "React", direction: -120 },
-                { src: "/Next.js.svg", name: "Next.js", direction: 120 },
-              ].map((tool, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, x: tool.direction }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true, amount: 0.3 }}
-                  transition={{
-                    duration: 1.2,
-                    delay: index * 0.05,
-                    ease: [0.16, 1, 0.3, 1],
-                  }}
-                  whileHover={{ scale: 1.08 }}
-                  className="relative group"
-                >
+    {/* Tools Grid */}
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-14 items-center justify-items-center">
+      {[
+        { src: "/figma.svg", name: "Figma", direction: -120 },
+        { src: "/autocad.jpg", name: "AutoCAD", direction: 120 },
+        { src: "/Google_Docs.png", name: "Google Docs", direction: -120 },
+        { src: "/iartbook.png", name: "IArtbook", direction: 120 },
+        { src: "/html.png", name: "HTML", direction: -120 },
+        { src: "/css.png", name: "CSS", direction: 120 },
+        { src: "/React-Logo.png", name: "React", direction: -120 },
+        { src: "/Next.js.svg", name: "Next.js", direction: 120 },
+      ].map((tool, index) => (
+        <motion.div
+          key={index}
+          initial={{ opacity: 0, x: tool.direction }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{
+            duration: 1.2,
+            delay: index * 0.05,
+            ease: [0.16, 1, 0.3, 1],
+          }}
+          whileHover={{ scale: 1.08 }}
+          className="relative group"
+        >
 
-                  <div
-                    className="
-    w-28 h-28 md:w-32 md:h-32
-    rounded-2xl 
-    bg-transparent backdrop-blur
-    overflow-hidden
-    transition-all duration-300
-    group-hover:border-light-purple/40
-    group-hover:bg-white/10
-  "
-                  >
-                    <img
-                      src={tool.src}
-                      alt={tool.name}
-                      draggable={false}
-                      className="w-full h-full object-contain p-3"
-                    />
-                  </div>
+          <div
+            className="
+              w-28 h-28 md:w-32 md:h-32
+              rounded-2xl 
+              bg-transparent backdrop-blur
+              overflow-hidden
+              transition-all duration-300
+              group-hover:border-light-purple/40
+              group-hover:bg-white/10
+            "
+          >
+            <img
+              src={tool.src}
+              alt={tool.name}
+              draggable={false}
+              className="w-full h-full object-contain p-3"
+            />
+          </div>
 
-                  {/* Hover Label */}
-                  <div className="
+          {/* Hover Label */}
+          <div className="
             absolute -bottom-8 left-1/2 -translate-x-1/2
             opacity-0 group-hover:opacity-100
             transition duration-300
             text-sm text-white/80
           ">
-                    {tool.name}
-                  </div>
-
-                </motion.div>
-              ))}
-            </div>
+            {tool.name}
           </div>
-        </section>
+
+        </motion.div>
+      ))}
+    </div>
+  </div>
+</section>
         <ProjectsPage />
 
 
