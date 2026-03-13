@@ -1,11 +1,12 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 type FloatingScreenProps = {
   src: string;
   alt: string;
-  className: string; // absolute positioning
+  className: string;
   delay: number;
   sizeClass?: string;
   rotate?: number;
@@ -35,7 +36,6 @@ function FloatingScreen({
         transition={{ type: "spring", stiffness: 260, damping: 18 }}
         className="rounded-2xl border border-white/10 bg-white/5 p-2 shadow-2xl backdrop-blur"
       >
-
         <img
           src={src}
           alt={alt}
@@ -47,207 +47,278 @@ function FloatingScreen({
   );
 }
 
-function SectionBadge({ text }: { text: string }) {
-  return (
-    <span className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/80 backdrop-blur">
-      {text}
-    </span>
-  );
-}
-
 const PROJECTS = [
   {
     title: "CyberShield",
-    desc: "Cybersecurity awareness + incident reporting portal with phishing simulation and risk scoring.",
-    tags: ["Next.js", "Node", "MongoDB", "AWS"],
+    desc: "Cybersecurity Awareness & Incident Reporting Platform (Final Year Project- Ongoing)",
+    tags: [
+      "Next.js",
+      "TypeScript",
+      "Node.js",
+      "ExpressJS",
+      "MongoDB Atlas",
+      "Clerk",
+      "AWS",
+      "Twilio",
+      "Nodemailer",
+      "Gemini API",
+      "Dialogflow",
+      "ElevenLabs",
+      "Cloudinary",
+      "Vercel",
+      "LLM",
+      "Git",
+    ],
+    designTools: ["Figma"],
+    figmaLink:
+      "https://www.figma.com/design/szFXsQvPQSxjLSvBb8s4Y2/CyberShield",
+    
   },
   {
-    title: "DataHub",
-    desc: "File management platform with auth, storage, dashboards, and secure uploads.",
-    tags: ["MERN", "TypeScript", "AWS S3", "Cloudinary"],
+    title: "CyberShield (Urdu Figma)",
+    desc: "Cybersecurity Awareness & Incident Reporting Platform (Final Year Project- Ongoing)",
+    tags: [
+      "Next.js",
+      "TypeScript",
+      "Node.js",
+      "ExpressJS",
+      "MongoDB Atlas",
+      "Clerk",
+      "AWS",
+      "Twilio",
+      "Nodemailer",
+      "Gemini API",
+      "Dialogflow",
+      "ElevenLabs",
+      "Cloudinary",
+      "Vercel",
+      "LLM",
+      "Git",
+    ],
+    designTools: ["Figma"],
+    figmaLink:
+      "https://www.figma.com/design/Z1pCtMuDx3tucttlemwpnO/CyberShield-in-urdu",
+    
   },
   {
-    title: "GreenThread",
-    desc: "Sustainable fashion marketplace connecting thrift stores and small businesses.",
-    tags: ["React", "Node", "MongoDB", "UI/UX"],
+    title: "ProjectX",
+    desc: "Academic Project Marketplace",
+    tags: [
+      "React",
+      "Tailwind",
+      "Node.js",
+      "Express",
+      "JWT",
+      "MongoDB",
+      "Cloudinary",
+      "Jest",
+      "Playwright",
+      
+    ],
+    designTools: ["Figma"],
+    figmaLink: "https://www.figma.com/file/xxxx",
+    githubLink:
+      "https://github.com/AimenMunawarDeveloper/Project-X/tree/new-changes",
   },
   {
-    title: "Spidex",
-    desc: "Web scraping platform with auth and downloadable data outputs (JSON/HTML).",
-    tags: ["Next.js", "MongoDB", "Cheerio", "Clerk"],
-  },
-  {
-    title: "Profeval",
-    desc: "RAG-powered professor Q&A chatbot with embeddings and vector search.",
-    tags: ["Next.js", "Pinecone", "LLM", "TypeScript"],
-  },
-  {
-    title: "Cortex Dashboard",
-    desc: "AI voice agent performance dashboard with sentiment analysis and customer profiles.",
-    tags: ["AWS", "DynamoDB", "Lambda", "Comprehend"],
+    title: "Pawsome 😺",
+    desc: "AI Cat Health Assistant Application.",
+    designTools: ["Figma"],
+    figmaLink:
+      "https://www.figma.com/design/TncLwqt77LUKK07c5cEiVS/AI-Cat-Health-Assistant",
   },
 ];
 
 export default function ProjectsPage() {
+  const text =
+    "Here are some projects that reflect my passion for design, creativity, and building user-focused experiences.";
+
+  const letters = text.split("");
+
   return (
-    <div className="min-h-screen bg-[#070016] text-white">
-      {/* Top Hero */}
+    <div className="min-h-screen bg-deep-purple text-white">
+      {/* HERO */}
       <section className="relative overflow-hidden">
-
+        {/* Glow background */}
         <div className="pointer-events-none absolute inset-0">
-          <div className="absolute -top-32 left-1/2 h-[420px] w-[420px] -translate-x-1/2 rounded-full bg-fuchsia-500/20 blur-3xl" />
-          <div className="absolute top-40 right-[-120px] h-[320px] w-[320px] rounded-full bg-indigo-500/15 blur-3xl" />
-          <div className="absolute bottom-[-180px] left-[-140px] h-[420px] w-[420px] rounded-full bg-purple-500/15 blur-3xl" />
+          <div className="absolute -top-32 left-1/2 h-[420px] w-[420px] -translate-x-1/2 rounded-full bg-light-purple/20 blur-3xl" />
+          <div className="absolute top-40 right-[-120px] h-[320px] w-[320px] rounded-full bg-pink/20 blur-3xl" />
+          <div className="absolute bottom-[-180px] left-[-140px] h-[420px] w-[420px] rounded-full bg-primary-red/20 blur-3xl" />
         </div>
 
-        <div className="mx-auto max-w-6xl px-6 pt-16 pb-10 md:pt-24">
-          <div className="flex flex-col gap-5">
-            {/* <div className="flex flex-wrap items-center gap-2">
-              <SectionBadge text="Projects" />
-              <SectionBadge text="Screens • Case Studies • Builds" />
-              <SectionBadge text="Next.js • Tailwind • Framer Motion" />
-            </div> */}
+        <div className="mx-auto max-w-6xl px-6 pt-20 pb-14">
+          <h1 className="text-4xl font-semibold tracking-tight md:text-6xl">
+            Work I’ve built —
+          </h1>
 
-            <h1 className="text-4xl font-semibold tracking-tight md:text-6xl pt-5">
-              Work I’ve built —
-              <span className="block text-white/70">
-                with real products, not just demos.
-              </span>
-            </h1>
+          <p className="text-white/70 mt-6 max-w-3xl text-2xl leading-relaxed">
+            {letters.map((char, index) => (
+              <motion.span
+                key={index}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: index * 0.03 }}
+              >
+                {char}
+              </motion.span>
+            ))}
 
-            <p className="max-w-2xl text-base leading-relaxed text-white/70 md:text-lg">
-              Scroll down — the project screens float up and settle in different positions,
-              giving you a quick visual overview before you jump into details.
-            </p>
-          </div>
+            <motion.span
+              className="inline-block w-[2px] h-[1em] bg-yellow ml-1"
+              animate={{ opacity: [0, 1, 0] }}
+              transition={{ repeat: Infinity, duration: 0.8 }}
+            />
+          </p>
         </div>
 
-        {/* Floating Screens Canvas */}
+        {/* Floating Screens */}
         <div className="relative mx-auto max-w-6xl px-6">
-          {/* Make this tall to give scroll room for the entrance */}
-          <div className="relative h-[1100px] md:h-[1200px] lg:h-[1300px]">
-            {/* BACK LAYER */}
+          <div className="relative h-[1400px] md:h-[1600px] lg:h-[1800px]">
             <FloatingScreen
-              src="/projects/screen-1.png"
-              alt="Project screen 1"
+              src="/Client Admin.png"
+              alt="Project"
               delay={0.05}
-              rotate={-6}
-              z={5}
-              sizeClass="w-[220px] md:w-[280px] lg:w-[310px]"
-              className="top-[18%] left-[4%] opacity-80 blur-[0.2px]"
-            />
-            <FloatingScreen
-              src="/projects/screen-2.png"
-              alt="Project screen 2"
-              delay={0.15}
-              rotate={7}
-              z={5}
-              sizeClass="w-[210px] md:w-[270px] lg:w-[300px]"
-              className="top-[28%] right-[2%] opacity-75"
-            />
-
-            {/* MID LAYER */}
-            <FloatingScreen
-              src="/projects/screen-3.png"
-              alt="Project screen 3"
-              delay={0.22}
-              rotate={-4}
-              z={10}
-              className="top-[40%] left-[18%]"
-            />
-            <FloatingScreen
-              src="/projects/screen-4.png"
-              alt="Project screen 4"
-              delay={0.28}
-              rotate={5}
-              z={12}
-              className="top-[44%] right-[16%]"
-            />
-
-            {/* FRONT LAYER */}
-            <FloatingScreen
-              src="/projects/screen-5.png"
-              alt="Project screen 5"
-              delay={0.34}
               rotate={-3}
-              z={18}
-              sizeClass="w-[260px] md:w-[340px] lg:w-[390px]"
-              className="top-[56%] left-[8%]"
+              sizeClass="w-[350px] h-[600px] object-contain"
+              className="top-[5%] left-[5%]"
             />
+
             <FloatingScreen
-              src="/projects/screen-6.png"
-              alt="Project screen 6"
-              delay={0.42}
-              rotate={4}
-              z={18}
-              sizeClass="w-[250px] md:w-[330px] lg:w-[380px]"
-              className="top-[60%] right-[6%]"
+              src="/Onboarding 3.png"
+              alt="Project"
+              delay={0.12}
+              rotate={2}
+              sizeClass="w-[320px] h-[600px] object-contain"
+              className="top-[20%] right-[10%]"
+            />
+
+            <FloatingScreen
+              src="/Home Page.png"
+              alt="Project"
+              delay={0.18}
+              rotate={-1}
+              sizeClass="w-[360px] h-[600px] object-contain"
+              className="top-[45%] left-[12%]"
+            />
+
+            <FloatingScreen
+              src="/Client Admin (1).png"
+              alt="Project"
+              delay={0.25}
+              rotate={3}
+              sizeClass="w-[340px] h-[600px] object-contain"
+              className="top-[65%] right-[6%]"
             />
           </div>
         </div>
 
-        {/* Gradient separator */}
-        <div className="mx-auto mt-6 max-w-6xl px-6 pb-2">
-          <div className="h-[2px] w-full rounded-full bg-gradient-to-r from-transparent via-fuchsia-400/60 to-transparent" />
+        <div className="mx-auto mt-10 max-w-6xl px-6">
+          <div className="h-[2px] w-full rounded-full bg-gradient-to-r from-transparent via-light-purple/70 to-transparent" />
         </div>
       </section>
 
-      {/* Projects Grid */}
-      <section className="mx-auto max-w-6xl px-6 py-14 md:py-20">
-        <div className="flex items-end justify-between gap-6">
-          <div>
-            <h2 className="text-2xl font-semibold md:text-3xl">Selected Projects</h2>
-            <p className="mt-2 max-w-2xl text-white/70">
-              A mix of production work, fellowships, and research-focused builds.
-            </p>
-          </div>
+      {/* PROJECTS */}
+      <section className="mx-auto max-w-6xl px-6 py-20">
+        <div className="mb-12">
+          <h2 className="text-3xl font-semibold md:text-4xl text-light-purple">
+            Projects
+          </h2>
 
-          <div className="hidden md:flex items-center gap-2">
-            <SectionBadge text="Case studies" />
-            <SectionBadge text="GitHub" />
-            <SectionBadge text="Live demos" />
-          </div>
+          <p className="mt-3 max-w-2xl text-white/70 leading-relaxed">
+            Selected projects showcasing my skills in design, development,
+            and problem-solving.
+          </p>
         </div>
 
-        <div className="mt-10 grid grid-cols-1 gap-5 md:grid-cols-2">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
           {PROJECTS.map((p, idx) => (
             <motion.div
               key={p.title}
               initial={{ y: 24, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
               viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.7, delay: idx * 0.05, ease: "easeOut" }}
-              className="rounded-3xl border border-white/10 bg-white/5 p-6 shadow-xl backdrop-blur"
+              transition={{ duration: 0.7, delay: idx * 0.05 }}
+              className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur transition hover:bg-white/10 hover:border-light-purple/40"
             >
-              <div className="flex items-start justify-between gap-4">
+              <div className="flex flex-col justify-between min-h-[360px]">
                 <div>
-                  <h3 className="text-lg font-semibold md:text-xl">{p.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-white/70">
-                    {p.desc}
-                  </p>
+                  <h3 className="text-xl font-semibold text-yellow">
+                    <Link
+                      href={`/projects/${p.title
+                        .toLowerCase()
+                        .replace(/\s+/g, "-")}`}
+                      className="hover:underline"
+                    >
+                      {p.title}
+                    </Link>
+                  </h3>
+
+                  {p.desc && (
+                    <p className="mt-3 text-sm leading-relaxed text-white/70">
+                      {p.desc}
+                    </p>
+                  )}
+
+                  {p.tags && (
+                    <div className="mt-4 flex flex-wrap gap-2">
+                      {p.tags.map((t) => (
+                        <span
+                          key={t}
+                          className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/80"
+                        >
+                          {t}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+
+                  {p.designTools?.length > 0 && (
+                    <>
+                      <h4 className="mt-6 text-sm font-semibold text-light-purple">
+                        Designing Tools
+                      </h4>
+
+                      <div className="mt-2 flex flex-wrap gap-2">
+                        {p.designTools.map((tool) => (
+                          <span
+                            key={tool}
+                            className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/80"
+                          >
+                            {tool}
+                          </span>
+                        ))}
+                      </div>
+                    </>
+                  )}
                 </div>
 
-                <div className="h-10 w-10 rounded-2xl border border-white/10 bg-white/5" />
-              </div>
+                <div className="my-6 h-px w-full bg-white/10" />
 
-              <div className="mt-5 flex flex-wrap gap-2">
-                {p.tags.map((t) => (
-                  <span
-                    key={t}
-                    className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/80"
-                  >
-                    {t}
-                  </span>
-                ))}
-              </div>
+                {(p.figmaLink || p.githubLink) && (
+                  <div className="flex items-center gap-3">
+                    {p.figmaLink && (
+                      <a
+                        href={p.figmaLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="rounded-xl border border-white/10 bg-light-purple/20 px-4 py-2 text-sm text-white transition hover:bg-light-purple"
+                      >
+                        Figma
+                      </a>
+                    )}
 
-              <div className="mt-6 flex items-center gap-3">
-                <button className="rounded-2xl border border-white/10 bg-white/10 px-4 py-2 text-sm text-white hover:bg-white/15 transition">
-                  View case study
-                </button>
-                <button className="rounded-2xl border border-white/10 bg-transparent px-4 py-2 text-sm text-white/80 hover:text-white transition">
-                  GitHub
-                </button>
+                    {p.githubLink && (
+                      <a
+                        href={p.githubLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="rounded-xl border border-white/10 px-4 py-2 text-sm text-white/80 transition hover:bg-pink hover:text-white"
+                      >
+                        GitHub
+                      </a>
+                    )}
+                  </div>
+                )}
               </div>
             </motion.div>
           ))}

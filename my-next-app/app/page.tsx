@@ -1,7 +1,7 @@
 // import ScrollFadeIn from "./Components/scrolling";
 "use client";
 import { motion, type Variants } from "framer-motion";
-
+import ProjectsPage from "./projects/page";
 type FloatingScreenProps = {
   src: string;
   alt: string;
@@ -108,7 +108,7 @@ export default function Home() {
         }
       `}</style>
 
-      <div className="flex flex-col bg-deep-purple overflow-x-hidden">
+      <div className="block pt-20 lg:flex flex-col bg-deep-purple overflow-x-hidden ">
         <section className="card z-10 flex items-center justify-around bg-deep-purple">
           <div
             className="absolute inset-0 pointer-events-none opacity-30"
@@ -122,13 +122,13 @@ export default function Home() {
             variants={stagger}
             initial="hidden"
             animate="show"
-            className="flex w-screen max-w-6xl flex-row items-center justify-center gap-12 px-6 relative"
+            className="flex flex-col lg:flex-row items-center justify-center w-screen max-w-6xl gap-12 px-6 relative"
             style={{ boxShadow: "6px 0 6px #60007489" }}
           >
             <motion.div
               variants={fadeUp}
               custom={0}
-              className="flex flex-col items-start justify-center gap-4 w-full max-w-md pl-6"
+              className="flex flex-col items-center lg:items-start text-center lg:text-left justify-center gap-4 w-full max-w-md"
             >
               <p
                 className="text-light-purple text-lg font-medium tracking-[0.2em] uppercase opacity-0"
@@ -183,7 +183,7 @@ export default function Home() {
             <motion.div
               variants={fadeUp}
               custom={0.18}
-              className="relative flex justify-center items-center w-[600px] h-[500px] overflow-visible"
+              className="relative flex justify-center items-center w-full max-w-[600px] h-[420px] md:h-[500px] overflow-visible"
               style={{ animation: "floatOnce 2s ease-in-out forwards" }}
             >
               <motion.div
@@ -272,19 +272,9 @@ export default function Home() {
               boxShadow: "0 0 60px rgba(213,1,255,0.12), 6px 0 6px #60007489",
             }}
           >
-            <div className="w-full md:w-1/3 flex justify-center">
-              <motion.img
-                initial={{ opacity: 0, scale: 0.96 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true, amount: 0.35 }}
-                transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-                src="/Profilepic2.png"
-                alt="Hadia Ali"
-                className="rounded-xl w-64 h-64 object-cover shadow-2xl"
-              />
-            </div>
 
-            <div className="w-full md:w-2/3 text-white/90 max-w-3xl flex flex-col gap-6">
+
+            <div className="w-full md:w-2/3 text-white/90 max-w-4xl flex flex-col gap-6">
               <motion.div
                 initial={{ opacity: 0, y: 14, filter: "blur(6px)" }}
                 whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
@@ -302,10 +292,7 @@ export default function Home() {
               >
                 <p className="text-lg md:text-xl leading-relaxed">
                   Hi! I’m{" "}
-                  <span className="text-light-purple font-semibold">Hadia Ali</span>, a
-                  passionate UI/UX designer focused on crafting intuitive,
-                  user-friendly interfaces. I love transforming ideas into engaging
-                  digital experiences while paying attention to every small detail.
+                  <span className="text-light-purple font-semibold">Hadia Ali</span>. I am a Software Engineering student at NUST and a passionate UI/UX designer who loves turning ideas into meaningful digital experiences. Creativity drives everything I do, and I enjoy exploring new design concepts, experimenting with layouts, and crafting interfaces that are both visually appealing and easy to use.
                 </p>
               </motion.div>
 
@@ -316,9 +303,7 @@ export default function Home() {
                 transition={{ duration: 0.65, delay: 0.12, ease: [0.16, 1, 0.3, 1] }}
               >
                 <p className="text-lg md:text-xl leading-relaxed">
-                  I enjoy collaborating with developers, designers, and product teams
-                  to create meaningful applications. My goal is to make digital
-                  experiences that feel seamless and enjoyable.
+                  A key part of my design process is understanding users. Their needs, behaviors, and challenges. I believe that good design starts with empathy, and by focusing on the user’s perspective, I aim to create solutions that are intuitive, accessible, and meaningful.
                 </p>
               </motion.div>
 
@@ -329,71 +314,100 @@ export default function Home() {
                 transition={{ duration: 0.65, delay: 0.18, ease: [0.16, 1, 0.3, 1] }}
               >
                 <p className="text-lg md:text-xl leading-relaxed">
-                  When I’m not designing, I’m exploring new design trends,
-                  experimenting with color palettes, or diving into new tools to level
-                  up my skills.
+                  For me, design is more than just aesthetics; it is about solving real problems and creating seamless interactions that make technology feel natural and enjoyable. As a software engineering student, I am continuously learning how design and technology work together to build better digital products.
                 </p>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 14 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.35 }}
+                transition={{ duration: 0.65, delay: 0.05, ease: [0.16, 1, 0.3, 1] }}
+              >
+                <p className="text-lg md:text-xl leading-relaxed">
+                  I am always eager to improve my skills, explore new tools, and push my creativity to develop designs that are innovative, functional, and engaging.</p>
               </motion.div>
             </div>
           </motion.div>
         </section>
+        <section className="bg-deep-purple py-20 px-6">
+          <div className="max-w-6xl mx-auto">
 
-        <section className="flex md:flex-col z-10 bg-deep-purple overflow-visible">
-          <div className="w-full max-w-6xl mx-auto px-6 relative overflow-visible flex flex-col">
+            {/* Section Heading */}
             <motion.div
-              initial={{ opacity: 0, y: 14, filter: "blur(6px)" }}
+              initial={{ opacity: 0, y: 20, filter: "blur(6px)" }}
               whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
               viewport={{ once: true, amount: 0.4 }}
-              transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+              className="text-center mb-16"
             >
-              <h2 className="text-center text-4xl md:text-5xl font-bold text-pink pt-20 pb-10">
-                Some of my digital arts.
+              <h2 className="text-4xl md:text-5xl font-bold text-light-purple">
+                Tools I’ve Worked With
               </h2>
             </motion.div>
 
-            <div
-              className="relative w-full overflow-visible 
-                flex  flex-col items-center gap-10
-                lg:block lg:h-[1300px]"
-            >
-              <FloatingScreen
-                src="/2.jpeg"
-                alt="Art 1"
-                delay={0.05}
-                rotate={-8}
-                z={10}
-                className="lg:top-[5%] lg:left-[20%] "
-              />
+            {/* Tools Grid */}
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-14 items-center justify-items-center">
+              {[
+                { src: "/figma.svg", name: "Figma", direction: -120 },
+                { src: "/autocad.jpg", name: "AutoCAD", direction: 120 },
+                { src: "/Google_Docs.png", name: "Google Docs", direction: -120 },
+                { src: "/iartbook.png", name: "IArtbook", direction: 120 },
+                { src: "/html.png", name: "HTML", direction: -120 },
+                { src: "/css.png", name: "CSS", direction: 120 },
+                { src: "/React-Logo.png", name: "React", direction: -120 },
+                { src: "/Next.js.svg", name: "Next.js", direction: 120 },
+              ].map((tool, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, x: tool.direction }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true, amount: 0.3 }}
+                  transition={{
+                    duration: 1.2,
+                    delay: index * 0.05,
+                    ease: [0.16, 1, 0.3, 1],
+                  }}
+                  whileHover={{ scale: 1.08 }}
+                  className="relative group"
+                >
 
-              <FloatingScreen
-                src="/1.jpeg"
-                alt="Art 2"
-                delay={0.1}
-                rotate={6}
-                z={20}
-                className="lg:top-[20%] lg:right-[1%] "
-              />
+                  <div
+                    className="
+    w-28 h-28 md:w-32 md:h-32
+    rounded-2xl 
+    bg-transparent backdrop-blur
+    overflow-hidden
+    transition-all duration-300
+    group-hover:border-light-purple/40
+    group-hover:bg-white/10
+  "
+                  >
+                    <img
+                      src={tool.src}
+                      alt={tool.name}
+                      draggable={false}
+                      className="w-full h-full object-contain p-3"
+                    />
+                  </div>
 
-              <FloatingScreen
-                src="/3.jpeg"
-                alt="Art 3"
-                delay={0.2}
-                rotate={-4}
-                z={15}
-                className="lg:top-[35%] lg:left-[%] "
-              />
+                  {/* Hover Label */}
+                  <div className="
+            absolute -bottom-8 left-1/2 -translate-x-1/2
+            opacity-0 group-hover:opacity-100
+            transition duration-300
+            text-sm text-white/80
+          ">
+                    {tool.name}
+                  </div>
 
-              <FloatingScreen
-                src="/4.jpeg"
-                alt="Art 4"
-                delay={0.3}
-                rotate={5}
-                z={25}
-                className="lg:top-[45%] lg:right-[30%] "
-              />
+                </motion.div>
+              ))}
             </div>
           </div>
         </section>
+        <ProjectsPage />
+
+
       </div>
     </>
   );
