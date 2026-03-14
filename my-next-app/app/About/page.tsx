@@ -175,7 +175,7 @@ export default function AboutPage() {
               custom={0.16}
               className="text-white/70 text-base md:text-xl leading-relaxed mt-6 max-w-3xl mx-auto"
             >
-              I am a passionate UI/UX designer who enjoys transforming ideas into
+              I am passionate about UI/UX design and enjoy transforming ideas into
               meaningful digital experiences. I love working on interfaces that
               feel visually engaging, intuitive, and user-friendly while bringing
               creativity and thoughtful problem-solving into every design.

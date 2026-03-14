@@ -291,7 +291,7 @@ export default function Home() {
   transition={{ duration: 0.65, delay: 0.05, ease: [0.16, 1, 0.3, 1] }}
 >
   <p className="text-lg md:text-xl leading-relaxed">
-    Hi! I’m <span className="text-light-purple font-semibold">Hadia Ali</span>, a Software Engineering student at NUST and a passionate UI/UX designer. 
+    Hi! I’m <span className="text-light-purple font-semibold">Hadia Ali</span>, a Software Engineering student at NUST and passionate about UI/UX design. 
     I enjoy turning ideas into meaningful digital experiences through thoughtful and user-focused design. 
     My process centers around understanding users and creating interfaces that are intuitive, accessible, and visually engaging. 
     I’m always exploring new tools, learning new techniques, and pushing my creativity to design experiences that are both functional and impactful.
